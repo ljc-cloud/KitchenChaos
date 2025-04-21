@@ -45,6 +45,8 @@ public class GameInterface : MonoBehaviour
         PlayerManager.OnInit();
         GameFrameSyncManager.OnInit();
 
+        // DOCompile
+        
         UIManager.PushUIPanel(UIPanelType.MainMenuUI, ShowUIPanelType.FadeIn);
 
 #if UNITY_EDITOR

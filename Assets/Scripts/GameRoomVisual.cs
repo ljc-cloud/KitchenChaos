@@ -44,7 +44,8 @@ public class GameRoomVisual : MonoBehaviour
                         break;
                     }
                 }
-                
+
+                _mRoomPlayerPositionAvailable[availableIndex] = false;
                 RoomPlayer roomPlayer = SpawnRoomPlayer(availableIndex, roomPlayerInfo);
                 _mRoomPlayerInfoToRoomPlayerDict.Add(roomPlayerInfo, roomPlayer);
             });
@@ -82,6 +83,7 @@ public class GameRoomVisual : MonoBehaviour
 
         private RoomPlayer SpawnRoomPlayer(int index, RoomPlayerInfo roomPlayerInfo)
         {
+            Debug.Log("SpawnRoomPlayer index:" + index);
             Transform roomPlayerPosition = roomPlayerPositionArray[index];
             GameObject roomPlayerGameObject = Instantiate(roomPlayerPrefab, roomPlayerPosition.position, roomPlayerPosition.rotation);
             RoomPlayer roomPlayer = roomPlayerGameObject.GetComponent<RoomPlayer>();
