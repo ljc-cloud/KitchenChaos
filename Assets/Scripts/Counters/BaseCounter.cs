@@ -1,12 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Counters;
 using UnityEngine;
 
-public class BaseCounter : MonoBehaviour, IKitchenObjectParent {
+public class BaseCounter : MonoBehaviour, IKitchenObjectParent
+{
 
+    [SerializeField] private int counterId;
+    
+    public int CounterId => counterId;
 
     public static event EventHandler OnAnyObjectPlacedHere;
+
+    protected virtual void Start()
+    {
+        CounterManager.Instance.AddCounter(this);
+    }
 
     public static void ResetStaticData() {
         OnAnyObjectPlacedHere = null;

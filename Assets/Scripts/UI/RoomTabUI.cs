@@ -45,5 +45,7 @@ public class RoomTabUI : MonoBehaviour, IPointerClickHandler
         GameInterface.Interface.UIManager.HideUIPanel(UIPanelType.RoomListUI);
         GameInterface.Interface.UIManager.HideUIPanel(UIPanelType.MainMenuUI);
         GameInterface.Interface.SceneLoader.LoadScene(Scene.RoomScene);
+        
+        GameInterface.Interface.EventSystem.Publish<PlayerEnterRoomEvent>();
     }
 }

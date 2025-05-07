@@ -804,7 +804,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiPanelSoListSo: {fileID: 11400000, guid: 94a932a194e7b5941b8911aa28d519d5, type: 2}
-  serverIP: 192.168.31.206
+  printUIList: 0
+  serverIP: 192.168.31.205
   serverPort: 8080
 --- !u!1 &1574067356
 GameObject:

@@ -1,3 +1,4 @@
+using System;
 using SocketProtocol;
 
 public class QuitRoomRequest : BaseRequest
@@ -10,21 +11,19 @@ public class QuitRoomRequest : BaseRequest
 
     protected override void HandleServerSuccessResponse(MainPack pack)
     {
-        int localClientId = GameInterface.Interface.TcpClient.ClientId;
-        int clientId = pack.ClientPack.ClientId;
+        int localPlayerId = GameInterface.Interface.LocalPlayerInfo.id;
 
-        int playerId = GameInterface.Interface.LocalPlayerInfo.id;
+        int playerId = pack.PlayerInfoPack.Id;
         GameInterface.Interface.RoomManager.QuitRoom(playerId);
 
-        if (localClientId == clientId)
+        if (localPlayerId == playerId)
         {
-
             Invoker.Instance.DelegateList.Add(() =>
             {
                 GameInterface.Interface.SceneLoader.LoadSceneAsync(Scene.MainMenuScene,
                     () =>
                     {
-                        GameInterface.Interface.UIManager.PushUIPanel(UIPanelType.RoomListUI,
+                        GameInterface.Interface.UIManager.PushUIPanelAppend(UIPanelType.RoomListUI,
                             ShowUIPanelType.FadeIn);
                     });
             });

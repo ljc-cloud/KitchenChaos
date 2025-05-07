@@ -24,38 +24,39 @@ namespace GameFrameSync {
     static GameFrameSyncReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNHYW1lRnJhbWVTeW5jLnByb3RvEg1HYW1lRnJhbWVTeW5jIqICChFSZXFG",
+            "ChNHYW1lRnJhbWVTeW5jLnByb3RvEg1HYW1lRnJhbWVTeW5jIrsCChFSZXFG",
             "cmFtZUlucHV0RGF0YRIPCgdmcmFtZUlkGAEgASgFEhAKCHBsYXllcklkGAIg",
             "ASgFEisKCWlucHV0VHlwZRgDIAEoDjIYLkdhbWVGcmFtZVN5bmMuSW5wdXRU",
             "eXBlEikKCHBvc2l0aW9uGAQgASgLMhcuR2FtZUZyYW1lU3luYy5WZWN0b3Iy",
             "RBINCgVmb3JjZRgFIAEoAhIWCg5hcnJvd1JvdGF0aW9uWhgGIAEoAhIvCg5z",
             "aG9vdERpcmVjdGlvbhgHIAEoCzIXLkdhbWVGcmFtZVN5bmMuVmVjdG9yMkQS",
             "KwoKbW92ZVZlY3RvchgIIAEoCzIXLkdhbWVGcmFtZVN5bmMuVmVjdG9yMkQS",
-            "DQoFaW5kZXgYCSABKAUinwIKDkZyYW1lSW5wdXREYXRhEg8KB2ZyYW1lSWQY",
-            "ASABKAUSEAoIcGxheWVySWQYAiABKAUSKwoJaW5wdXRUeXBlGAMgASgOMhgu",
-            "R2FtZUZyYW1lU3luYy5JbnB1dFR5cGUSKQoIcG9zaXRpb24YBCABKAsyFy5H",
-            "YW1lRnJhbWVTeW5jLlZlY3RvcjJEEg0KBWZvcmNlGAUgASgCEhYKDmFycm93",
-            "Um90YXRpb25aGAYgASgCEi8KDnNob290RGlyZWN0aW9uGAcgASgLMhcuR2Ft",
-            "ZUZyYW1lU3luYy5WZWN0b3IyRBIrCgptb3ZlVmVjdG9yGAggASgLMhcuR2Ft",
-            "ZUZyYW1lU3luYy5WZWN0b3IyRBINCgVpbmRleBgJIAEoBSIpCgtNZXNzYWdl",
-            "SGVhZBINCgVpbmRleBgBIAEoBRILCgNhY2sYAiABKAgiKwoIVmVjdG9yM0QS",
-            "CQoBeBgBIAEoAhIJCgF5GAIgASgCEgkKAXoYAyABKAIiIAoIVmVjdG9yMkQS",
-            "CQoBeBgBIAEoAhIJCgF5GAIgASgCIpICChBSZXNGcmFtZVN5bmNEYXRhEg8K",
-            "B2ZyYW1lSWQYASABKAUSPAoVcGxheWVyc0ZyYW1lSW5wdXREYXRhGAIgAygL",
-            "Mh0uR2FtZUZyYW1lU3luYy5GcmFtZUlucHV0RGF0YRI7ChFyZXFGcmFtZUlu",
-            "cHV0RGF0YRgDIAEoCzIgLkdhbWVGcmFtZVN5bmMuUmVxRnJhbWVJbnB1dERh",
-            "dGESLwoLbWVzc2FnZUhlYWQYBSABKAsyGi5HYW1lRnJhbWVTeW5jLk1lc3Nh",
-            "Z2VIZWFkEi8KC21lc3NhZ2VUeXBlGAYgASgOMhouR2FtZUZyYW1lU3luYy5N",
-            "ZXNzYWdlVHlwZRIQCghyb29tQ29kZRgHIAEoCSqAAQoJSW5wdXRUeXBlEggK",
-            "BE5vbmUQABIMCghNb3ZlTGVmdBABEg0KCU1vdmVSaWdodBACEgkKBVJlYWR5",
-            "EAMSDQoJUXVpdFJlYWR5EAQSCQoFU2hvb3QQBRIICgRNb3ZlEAYSDAoISW50",
-            "ZXJhY3QQBxIPCgtJbnRlcmFjdEFsdBAIKiUKC01lc3NhZ2VUeXBlEg0KCUZy",
-            "YW1lU3luYxAAEgcKA0FDSxACYgZwcm90bzM="));
+            "DQoFaW5kZXgYCSABKAUSFwoPaW50ZXJhY3RDb3VudGVyGAogASgFIrgCCg5G",
+            "cmFtZUlucHV0RGF0YRIPCgdmcmFtZUlkGAEgASgFEhAKCHBsYXllcklkGAIg",
+            "ASgFEisKCWlucHV0VHlwZRgDIAEoDjIYLkdhbWVGcmFtZVN5bmMuSW5wdXRU",
+            "eXBlEikKCHBvc2l0aW9uGAQgASgLMhcuR2FtZUZyYW1lU3luYy5WZWN0b3Iy",
+            "RBINCgVmb3JjZRgFIAEoAhIWCg5hcnJvd1JvdGF0aW9uWhgGIAEoAhIvCg5z",
+            "aG9vdERpcmVjdGlvbhgHIAEoCzIXLkdhbWVGcmFtZVN5bmMuVmVjdG9yMkQS",
+            "KwoKbW92ZVZlY3RvchgIIAEoCzIXLkdhbWVGcmFtZVN5bmMuVmVjdG9yMkQS",
+            "DQoFaW5kZXgYCSABKAUSFwoPaW50ZXJhY3RDb3VudGVyGAogASgFIikKC01l",
+            "c3NhZ2VIZWFkEg0KBWluZGV4GAEgASgFEgsKA2FjaxgCIAEoCCIrCghWZWN0",
+            "b3IzRBIJCgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAiIgCghWZWN0",
+            "b3IyRBIJCgF4GAEgASgCEgkKAXkYAiABKAIikgIKEFJlc0ZyYW1lU3luY0Rh",
+            "dGESDwoHZnJhbWVJZBgBIAEoBRI8ChVwbGF5ZXJzRnJhbWVJbnB1dERhdGEY",
+            "AiADKAsyHS5HYW1lRnJhbWVTeW5jLkZyYW1lSW5wdXREYXRhEjsKEXJlcUZy",
+            "YW1lSW5wdXREYXRhGAMgASgLMiAuR2FtZUZyYW1lU3luYy5SZXFGcmFtZUlu",
+            "cHV0RGF0YRIvCgttZXNzYWdlSGVhZBgFIAEoCzIaLkdhbWVGcmFtZVN5bmMu",
+            "TWVzc2FnZUhlYWQSLwoLbWVzc2FnZVR5cGUYBiABKA4yGi5HYW1lRnJhbWVT",
+            "eW5jLk1lc3NhZ2VUeXBlEhAKCHJvb21Db2RlGAcgASgJKoABCglJbnB1dFR5",
+            "cGUSCAoETm9uZRAAEgwKCE1vdmVMZWZ0EAESDQoJTW92ZVJpZ2h0EAISCQoF",
+            "UmVhZHkQAxINCglRdWl0UmVhZHkQBBIJCgVTaG9vdBAFEggKBE1vdmUQBhIM",
+            "CghJbnRlcmFjdBAHEg8KC0ludGVyYWN0QWx0EAgqJQoLTWVzc2FnZVR5cGUS",
+            "DQoJRnJhbWVTeW5jEAASBwoDQUNLEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GameFrameSync.InputType), typeof(global::GameFrameSync.MessageType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.ReqFrameInputData), global::GameFrameSync.ReqFrameInputData.Parser, new[]{ "FrameId", "PlayerId", "InputType", "Position", "Force", "ArrowRotationZ", "ShootDirection", "MoveVector", "Index" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.FrameInputData), global::GameFrameSync.FrameInputData.Parser, new[]{ "FrameId", "PlayerId", "InputType", "Position", "Force", "ArrowRotationZ", "ShootDirection", "MoveVector", "Index" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.ReqFrameInputData), global::GameFrameSync.ReqFrameInputData.Parser, new[]{ "FrameId", "PlayerId", "InputType", "Position", "Force", "ArrowRotationZ", "ShootDirection", "MoveVector", "Index", "InteractCounter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.FrameInputData), global::GameFrameSync.FrameInputData.Parser, new[]{ "FrameId", "PlayerId", "InputType", "Position", "Force", "ArrowRotationZ", "ShootDirection", "MoveVector", "Index", "InteractCounter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.MessageHead), global::GameFrameSync.MessageHead.Parser, new[]{ "Index", "Ack" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.Vector3D), global::GameFrameSync.Vector3D.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::GameFrameSync.Vector2D), global::GameFrameSync.Vector2D.Parser, new[]{ "X", "Y" }, null, null, null, null),
@@ -130,6 +131,7 @@ namespace GameFrameSync {
       shootDirection_ = other.shootDirection_ != null ? other.shootDirection_.Clone() : null;
       moveVector_ = other.moveVector_ != null ? other.moveVector_.Clone() : null;
       index_ = other.index_;
+      interactCounter_ = other.interactCounter_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -247,6 +249,18 @@ namespace GameFrameSync {
       }
     }
 
+    /// <summary>Field number for the "interactCounter" field.</summary>
+    public const int InteractCounterFieldNumber = 10;
+    private int interactCounter_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int InteractCounter {
+      get { return interactCounter_; }
+      set {
+        interactCounter_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -271,6 +285,7 @@ namespace GameFrameSync {
       if (!object.Equals(ShootDirection, other.ShootDirection)) return false;
       if (!object.Equals(MoveVector, other.MoveVector)) return false;
       if (Index != other.Index) return false;
+      if (InteractCounter != other.InteractCounter) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -287,6 +302,7 @@ namespace GameFrameSync {
       if (shootDirection_ != null) hash ^= ShootDirection.GetHashCode();
       if (moveVector_ != null) hash ^= MoveVector.GetHashCode();
       if (Index != 0) hash ^= Index.GetHashCode();
+      if (InteractCounter != 0) hash ^= InteractCounter.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -341,6 +357,10 @@ namespace GameFrameSync {
         output.WriteRawTag(72);
         output.WriteInt32(Index);
       }
+      if (InteractCounter != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(InteractCounter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -387,6 +407,10 @@ namespace GameFrameSync {
         output.WriteRawTag(72);
         output.WriteInt32(Index);
       }
+      if (InteractCounter != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(InteractCounter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -423,6 +447,9 @@ namespace GameFrameSync {
       }
       if (Index != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Index);
+      }
+      if (InteractCounter != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(InteractCounter);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -471,6 +498,9 @@ namespace GameFrameSync {
       }
       if (other.Index != 0) {
         Index = other.Index;
+      }
+      if (other.InteractCounter != 0) {
+        InteractCounter = other.InteractCounter;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -534,6 +564,10 @@ namespace GameFrameSync {
           }
           case 72: {
             Index = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            InteractCounter = input.ReadInt32();
             break;
           }
         }
@@ -600,6 +634,10 @@ namespace GameFrameSync {
             Index = input.ReadInt32();
             break;
           }
+          case 80: {
+            InteractCounter = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -651,6 +689,7 @@ namespace GameFrameSync {
       shootDirection_ = other.shootDirection_ != null ? other.shootDirection_.Clone() : null;
       moveVector_ = other.moveVector_ != null ? other.moveVector_.Clone() : null;
       index_ = other.index_;
+      interactCounter_ = other.interactCounter_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -768,6 +807,18 @@ namespace GameFrameSync {
       }
     }
 
+    /// <summary>Field number for the "interactCounter" field.</summary>
+    public const int InteractCounterFieldNumber = 10;
+    private int interactCounter_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int InteractCounter {
+      get { return interactCounter_; }
+      set {
+        interactCounter_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -792,6 +843,7 @@ namespace GameFrameSync {
       if (!object.Equals(ShootDirection, other.ShootDirection)) return false;
       if (!object.Equals(MoveVector, other.MoveVector)) return false;
       if (Index != other.Index) return false;
+      if (InteractCounter != other.InteractCounter) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -808,6 +860,7 @@ namespace GameFrameSync {
       if (shootDirection_ != null) hash ^= ShootDirection.GetHashCode();
       if (moveVector_ != null) hash ^= MoveVector.GetHashCode();
       if (Index != 0) hash ^= Index.GetHashCode();
+      if (InteractCounter != 0) hash ^= InteractCounter.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -862,6 +915,10 @@ namespace GameFrameSync {
         output.WriteRawTag(72);
         output.WriteInt32(Index);
       }
+      if (InteractCounter != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(InteractCounter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -908,6 +965,10 @@ namespace GameFrameSync {
         output.WriteRawTag(72);
         output.WriteInt32(Index);
       }
+      if (InteractCounter != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(InteractCounter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -944,6 +1005,9 @@ namespace GameFrameSync {
       }
       if (Index != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Index);
+      }
+      if (InteractCounter != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(InteractCounter);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -992,6 +1056,9 @@ namespace GameFrameSync {
       }
       if (other.Index != 0) {
         Index = other.Index;
+      }
+      if (other.InteractCounter != 0) {
+        InteractCounter = other.InteractCounter;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1057,6 +1124,10 @@ namespace GameFrameSync {
             Index = input.ReadInt32();
             break;
           }
+          case 80: {
+            InteractCounter = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1119,6 +1190,10 @@ namespace GameFrameSync {
           }
           case 72: {
             Index = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            InteractCounter = input.ReadInt32();
             break;
           }
         }

@@ -38,6 +38,7 @@ enum ActionCode
 	ChangeRound = 15;
 	ChangeOperation = 16;
 	SetGameOver = 17;
+	UpdateRecipe = 18;
 }
 
 enum RoomVisibility
@@ -104,6 +105,8 @@ message MainPack
 	GameOverPack gameOverPack = 23;
 
 	GameState currentGameState = 24;
+	repeated int32 recipeIdArray = 25;
+	int32 deliverRecipeId = 26;
 }
 
 message PlayerCoinPack

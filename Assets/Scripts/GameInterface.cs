@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameInterface : MonoBehaviour
 {
     [Header("UI")] [SerializeField] private UIPanelSoListSo uiPanelSoListSo;
+    [SerializeField] private bool printUIList = false;
     [Header("网络")] [SerializeField] private string serverIP;
     [SerializeField] private int serverPort;
 
@@ -29,6 +30,10 @@ public class GameInterface : MonoBehaviour
 
         Interface = this;
         DontDestroyOnLoad(gameObject);
+        
+#if UNITY_EDITOR
+        serverIP = "127.0.0.1";
+#endif
 
         TcpClient = new TcpClient(serverIP, serverPort);
         UdpListener = new UdpListener();
@@ -45,13 +50,20 @@ public class GameInterface : MonoBehaviour
         PlayerManager.OnInit();
         GameFrameSyncManager.OnInit();
 
-        // DOCompile
+       // DOCompile 
         
         UIManager.PushUIPanel(UIPanelType.MainMenuUI, ShowUIPanelType.FadeIn);
 
-#if UNITY_EDITOR
-        serverIP = "127.0.0.1";
-#endif
+
+    }
+
+    private void Update()
+    {
+        if (printUIList)
+        {
+            UIManager.PrintUIList();
+            printUIList = false;
+        }
     }
 
     private void OnDestroy()

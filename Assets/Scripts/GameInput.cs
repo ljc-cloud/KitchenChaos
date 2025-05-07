@@ -58,10 +58,12 @@ public class GameInput : MonoBehaviour {
         playerInputActions.Player.Move.performed += Move_performed;
         playerInputActions.Player.Move.canceled += Move_canceled;
         playerInputActions.Player.Interact.performed += Interact_performed;
+        playerInputActions.Player.Interact.canceled += Interact_canceled;
         playerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
+        playerInputActions.Player.InteractAlternate.canceled -= InteractAlternate_canceled;
         playerInputActions.Player.Pause.performed += Pause_performed;
     }
-
+    
     private void Move_canceled(InputAction.CallbackContext obj)
     {
         LocalPlayerInputType = GameFrameSyncManager.PlayerInputType.None;
@@ -75,9 +77,11 @@ public class GameInput : MonoBehaviour {
     }
 
     private void OnDestroy() {
+        if (playerInputActions == null) return;
         playerInputActions.Player.Move.performed -= Move_performed;
         playerInputActions.Player.Move.canceled -= Move_canceled;
         playerInputActions.Player.Interact.performed -= Interact_performed;
+        playerInputActions.Player.Interact.canceled -= Interact_canceled;
         playerInputActions.Player.InteractAlternate.performed -= InteractAlternate_performed;
         playerInputActions.Player.Pause.performed -= Pause_performed;
 
@@ -94,11 +98,22 @@ public class GameInput : MonoBehaviour {
         OnInteractAlternateAction?.Invoke(this, EventArgs.Empty);
     }
 
+    private void InteractAlternate_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        LocalPlayerInputType = GameFrameSyncManager.PlayerInputType.None;
+    }
+
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
         LocalPlayerInputType = GameFrameSyncManager.PlayerInputType.Interact;
         Debug.Log("Interact_performed");
         OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
+    
+    private void Interact_canceled(InputAction.CallbackContext obj)
+    {
+        LocalPlayerInputType = GameFrameSyncManager.PlayerInputType.None;
+    }
+
 
     public Vector2 GetMovementVectorNormalized() {
         return MoveVector.normalized;

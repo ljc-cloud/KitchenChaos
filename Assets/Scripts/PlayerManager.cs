@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+[Obsolete]
 public class PlayerManager : BaseManager
 {
     private readonly Dictionary<int, Player> _mPlayerDict;

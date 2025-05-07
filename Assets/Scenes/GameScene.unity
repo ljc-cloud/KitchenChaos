@@ -1573,7 +1573,7 @@ PrefabInstance:
     - target: {fileID: 1239538566492146350, guid: 0bfb01b2093aabd4d98cc447ac6a9514,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1239538566492146350, guid: 0bfb01b2093aabd4d98cc447ac6a9514,
         type: 3}
@@ -2346,7 +2346,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &319700760 stripped
 GameObject:
@@ -3030,7 +3030,7 @@ PrefabInstance:
     - target: {fileID: 1239538566492146350, guid: 0bfb01b2093aabd4d98cc447ac6a9514,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1239538566492146350, guid: 0bfb01b2093aabd4d98cc447ac6a9514,
         type: 3}
@@ -4528,6 +4528,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544243255}
   m_CullTransparentMesh: 1
+--- !u!1 &552588252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552588254}
+  - component: {fileID: 552588253}
+  m_Layer: 0
+  m_Name: CounterManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &552588253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552588252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffc3d3c6df04464854fd35aa1126cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &552588254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552588252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572850441
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,6 +5849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 1
   counterTopPoint: {fileID: 514600874}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!65 &661418651
@@ -9080,7 +9125,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &909957277
 GameObject:
@@ -10523,7 +10568,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1021733163
 MonoBehaviour:
@@ -13184,7 +13229,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312001504
 GameObject:
@@ -14032,7 +14077,7 @@ PrefabInstance:
     - target: {fileID: 1239538566492146350, guid: 0bfb01b2093aabd4d98cc447ac6a9514,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1239538566492146350, guid: 0bfb01b2093aabd4d98cc447ac6a9514,
         type: 3}
@@ -16836,7 +16881,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1511480604
 PrefabInstance:
@@ -18477,6 +18522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 25
   counterTopPoint: {fileID: 1992370063}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!65 &1633450608
@@ -23751,7 +23797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2101024260
 GameObject:
@@ -45003,6 +45049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870ab78533943e4448b15305b146a6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 12
   counterTopPoint: {fileID: 8028450213301497275}
   plateKitchenObjectSO: {fileID: 11400000, guid: c2b29260396631a4792f2e3e10773a1d,
     type: 2}
@@ -45330,6 +45377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db6202b23fd35c48a842e95c205e439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 9
   counterTopPoint: {fileID: 4833800411594633127}
   kitchenObjectSO: {fileID: 11400000, guid: e1a992a9fc8e0034894b898a3970c45f, type: 2}
 --- !u!4 &1797156435232423622
@@ -45894,6 +45942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db6202b23fd35c48a842e95c205e439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 2
   counterTopPoint: {fileID: 4713641298639981043}
   kitchenObjectSO: {fileID: 11400000, guid: dc7206a372e873e44945cb9155f8c1ba, type: 2}
 --- !u!205 &1925120661675504316
@@ -49786,6 +49835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e92f4d33b30b54e956021f3e120d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 7
   counterTopPoint: {fileID: 3219047973318060640}
   cuttingRecipeSOArray:
   - {fileID: 11400000, guid: 2ca750429db7304438f14b4f86ab748d, type: 2}
@@ -49803,6 +49853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e92f4d33b30b54e956021f3e120d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 18
   counterTopPoint: {fileID: 3219047973939240270}
   cuttingRecipeSOArray:
   - {fileID: 11400000, guid: 2ca750429db7304438f14b4f86ab748d, type: 2}
@@ -58072,7 +58123,7 @@ Transform:
   - {fileID: 5679943873360879780}
   - {fileID: 845164788048585907}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3694100218499098962
 MonoBehaviour:
@@ -58519,6 +58570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db6202b23fd35c48a842e95c205e439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 21
   counterTopPoint: {fileID: 8030819505525535640}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!4 &3802563251369242268
@@ -62913,6 +62965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 27
   counterTopPoint: {fileID: 3185760948616909479}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234905148343274
@@ -62927,6 +62980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 24
   counterTopPoint: {fileID: 3185760948824164890}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234905462787412
@@ -62941,6 +62995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 20
   counterTopPoint: {fileID: 3185760948106806436}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234905500374696
@@ -62955,6 +63010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 23
   counterTopPoint: {fileID: 3185760948068835160}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234905513129973
@@ -62969,6 +63025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 4
   counterTopPoint: {fileID: 3185760948056489477}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234905610441767
@@ -62983,6 +63040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 10
   counterTopPoint: {fileID: 3185760948225105367}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234905934443322
@@ -62997,6 +63055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 30
   counterTopPoint: {fileID: 3185760948037401290}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906030784161
@@ -63011,6 +63070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 17
   counterTopPoint: {fileID: 3185760949685630801}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906068092411
@@ -63025,6 +63085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 26
   counterTopPoint: {fileID: 3185760949781597195}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906354022134
@@ -63039,6 +63100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 28
   counterTopPoint: {fileID: 3185760949497167622}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906414333681
@@ -63053,6 +63115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 29
   counterTopPoint: {fileID: 3185760949569992449}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906495590467
@@ -63067,6 +63130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 6
   counterTopPoint: {fileID: 3185760949621893555}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906620508020
@@ -63081,6 +63145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 3
   counterTopPoint: {fileID: 3185760949230911108}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906692032655
@@ -63095,6 +63160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 15
   counterTopPoint: {fileID: 3185760949294109055}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906766147051
@@ -63109,6 +63175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 19
   counterTopPoint: {fileID: 3185760949351379995}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!114 &4674234906877133942
@@ -63123,6 +63190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325808e67cabbcc458ca5299cadff5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 16
   counterTopPoint: {fileID: 3185760948971638150}
   kitchenObjectSO: {fileID: 11400000, guid: 0a615e1c7288587449871fd434e85ab6, type: 2}
 --- !u!33 &4680852496330312223
@@ -65328,6 +65396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db6202b23fd35c48a842e95c205e439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 22
   counterTopPoint: {fileID: 2145039646646178521}
   kitchenObjectSO: {fileID: 11400000, guid: eb5d66fe5fbe79b4da16b49136928aa4, type: 2}
 --- !u!65 &5056740331625134897
@@ -70253,6 +70322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dd2d62d26fc534397d5ddb80580654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 14
   counterTopPoint: {fileID: 7865281413609551276}
 --- !u!1 &5976688487121431649
 GameObject:
@@ -81663,6 +81733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069e318cfc400bd4181964d4499ef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 8
   counterTopPoint: {fileID: 8560700901379606088}
   fryingRecipeSOArray:
   - {fileID: 11400000, guid: 1f52ef2c00e7d9c4d88139f5addac5e1, type: 2}
@@ -81680,6 +81751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069e318cfc400bd4181964d4499ef493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 13
   counterTopPoint: {fileID: 8560700899732171902}
   fryingRecipeSOArray:
   - {fileID: 11400000, guid: 1f52ef2c00e7d9c4d88139f5addac5e1, type: 2}
@@ -83074,6 +83146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db6202b23fd35c48a842e95c205e439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 5
   counterTopPoint: {fileID: 4483937578697974649}
   kitchenObjectSO: {fileID: 11400000, guid: 8fd6ae235d3fd22418d2f744dee1a974, type: 2}
 --- !u!4 &7354365587377645025
@@ -87011,6 +87084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc67e56a93b8ce4d80827c75c05918e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterId: 11
   counterTopPoint: {fileID: 147447562008189363}
 --- !u!1 &7963029636023010624
 GameObject:

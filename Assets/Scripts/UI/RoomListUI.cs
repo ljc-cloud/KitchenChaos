@@ -48,7 +48,6 @@ public class RoomListUI : BaseUIPanel
     {
         Debug.Log("搜索房间中...");
         // 搜索所有房间
-        // SearchRoomRequest searchRoomRequest = GameInterface.Interface.RequestManager.GetRequest<SearchRoomRequest>();
         _mSearchRoomRequest.SendSearchRoomRequest(roomInfo =>
         {
             roomInfo.roomVisibility = RoomVisibility.None;

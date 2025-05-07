@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Net.Request;
 using SocketProtocol;
 using UnityEngine;
 
@@ -28,6 +29,8 @@ public class RequestManager : BaseManager
         _mRequestList.Add(new ReadyStartGameResponse());
         _mRequestList.Add(new LoadGameSceneCompleteRequest());
         _mRequestList.Add(new GameStateChangeResponse());
+        _mRequestList.Add(new DeliverRecipeRequest());
+        _mRequestList.Add(new UpdateRecipeResponse());
 
         foreach (var request in _mRequestList)
         {

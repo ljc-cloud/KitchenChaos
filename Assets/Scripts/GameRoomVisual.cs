@@ -47,7 +47,7 @@ public class GameRoomVisual : MonoBehaviour
 
                 _mRoomPlayerPositionAvailable[availableIndex] = false;
                 RoomPlayer roomPlayer = SpawnRoomPlayer(availableIndex, roomPlayerInfo);
-                _mRoomPlayerInfoToRoomPlayerDict.Add(roomPlayerInfo, roomPlayer);
+                _mRoomPlayerInfoToRoomPlayerDict[roomPlayerInfo] = roomPlayer;
             });
         }
         private void OnRoomPlayerQuit(RoomPlayerInfo roomPlayerInfo)

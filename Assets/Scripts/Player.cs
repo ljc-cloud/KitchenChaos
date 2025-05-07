@@ -1,4 +1,5 @@
 using System;
+using Counters;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IKitchenObjectParent {
@@ -34,16 +35,16 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     }
 
     private void Start() {
-        if (_mEntity.IsLocal)
-        {
-            Debug.Log("Player is local");
-            GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
-            GameInput.Instance.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
-        }
-        else
-        {
-            _mEntity.OnPlayerInputChanged += Entity_OnPlayerInputChanged;
-        }
+        // if (_mEntity.IsLocal)
+        // {
+        //     GameInput.Instance.OnInteractAction += GameInput_OnInteractAction;
+        //     GameInput.Instance.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
+        // }
+        // else
+        // {
+        //     _mEntity.OnPlayerInputChanged += Entity_OnPlayerInputChanged;
+        // }
+        _mEntity.OnPlayerInputChanged += Entity_OnPlayerInputChanged;
     }
 
     private void Entity_OnPlayerInputChanged(object sender, Entity.OnPlayerInputChangedEventArgs e)
@@ -71,11 +72,16 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     private void InteractAlternateAction()
     {
         if (!KitchenGameManager.Instance.IsGamePlaying()) return;
+        
+        int counterId = _mEntity.interactCounterId;
+        var counter = CounterManager.Instance.GetCounterFromId(counterId);
+        counter?.InteractAlternate(this);
+        _mEntity.interactCounterId = -1;
 
-        if (selectedCounter != null) {
-            // Debug.Log($"{selectedCounter.name}:InteractAlt!!!");
-            selectedCounter.InteractAlternate(this);
-        }
+        // if (selectedCounter != null) {
+        //     // Debug.Log($"{selectedCounter.name}:InteractAlt!!!");
+        //     selectedCounter.InteractAlternate(this);
+        // }
     }
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
@@ -87,10 +93,24 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
     {
         if (!KitchenGameManager.Instance.IsGamePlaying()) return;
 
-        if (selectedCounter != null) {
-            // Debug.Log($"{selectedCounter.name}:Interact!!!");
-            selectedCounter.Interact(this);
-        }
+        // if (_mEntity.IsLocal)
+        // {
+        //     if (selectedCounter != null) {
+        //         // Debug.Log($"{selectedCounter.name}:Interact!!!");
+        //         selectedCounter.Interact(this);
+        //         // _mEntity.localInteractCounterId = selectedCounter.CounterId;
+        //     }
+        // }
+        // else
+        // {
+        //     int counterId = _mEntity.interactCounterId;
+        //     var counter = CounterManager.Instance.GetCounterFromId(counterId);
+        //     counter?.Interact(this);
+        // }
+        int counterId = _mEntity.interactCounterId;
+        var counter = CounterManager.Instance.GetCounterFromId(counterId);
+        counter?.Interact(this);
+        _mEntity.interactCounterId = -1;
     }
 
     private void Update() {
@@ -104,15 +124,11 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
 
     private void HandleInteractions()
     {
-        Vector2 inputVector = Vector2.zero;
-        if (_mEntity.IsLocal)
+        if (!_mEntity.IsLocal)
         {
-            inputVector = GameInput.Instance.GetMovementVectorNormalized();
+            return;
         }
-        else
-        {
-            inputVector = _mEntity.moveVector;
-        }
+        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
@@ -122,22 +138,25 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
 
         float interactDistance = 2f;
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask)) {
-            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter)) {
+            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
+            {
+                _mEntity.localInteractCounterId = baseCounter.CounterId;
                 // Has ClearCounter
                 if (baseCounter != selectedCounter) {
                     SetSelectedCounter(baseCounter);
                 }
             } else {
                 SetSelectedCounter(null);
-
+                _mEntity.localInteractCounterId = -1;
             }
         } else {
             SetSelectedCounter(null);
+            _mEntity.localInteractCounterId = -1;
         }
     }
 
-    private void HandleMovement() {
-
+    private void HandleMovement() 
+    {
         if (_mEntity.IsLocal)
         {
             moveVector = GameInput.Instance.GetMovementVectorNormalized();
@@ -165,6 +184,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
                 moveDir = moveDirX;
             } else {
                 // Cannot move only on the X
+                // Cannot move only on the X
 
                 // Attempt only Z movement
                 Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
@@ -187,13 +207,23 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
 
         float rotateSpeed = 10f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        
+        // TODO: Lerp远端位置
+        if (!_mEntity.IsLocal)
+        {
+            transform.position = Vector3.Lerp(transform.position, _mEntity.playerPosition
+                , Time.deltaTime * 0.5f);
+        }
     }
 
-    private void SetSelectedCounter(BaseCounter selectedCounter) {
-        this.selectedCounter = selectedCounter;
-
+    private void SetSelectedCounter(BaseCounter counter) {
+        // if (counter is null)
+        // {
+        //     return;
+        // }
+        this.selectedCounter = counter;
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs {
-            selectedCounter = selectedCounter
+            selectedCounter = counter
         });
     }
 

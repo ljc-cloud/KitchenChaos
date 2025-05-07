@@ -38,6 +38,14 @@ public class Entity : MonoBehaviour
     /// 移动向量(本地)
     /// </summary>
     public Vector2 localMoveVector;
+    /// <summary>
+    /// 交互CounterId(本地)
+    /// </summary>
+    public int localInteractCounterId;
+    /// <summary>
+    /// 交互CounterId(远程)
+    /// </summary>
+    public int interactCounterId;
 
     public bool IsLocal => playerType is PlayerType.Local;
     
@@ -52,6 +60,7 @@ public class Entity : MonoBehaviour
     private void Start()
     {
         GameInterface.Interface.GameFrameSyncManager.OnFrameSync += OnFrameSync;
+        playerPosition = transform.position;
     }
 
     private void Update()
@@ -75,12 +84,16 @@ public class Entity : MonoBehaviour
         {
             GameFrameSyncManager.PlayerInputType inputType = 
                 Enum.Parse<GameFrameSyncManager.PlayerInputType>(frameInputData.InputType.ToString());
-
+            interactCounterId = frameInputData.InteractCounter;
             if (inputType != playerInputType) 
             {
-                OnPlayerInputChanged?.Invoke(this, new OnPlayerInputChangedEventArgs
-                    { playerId = playerId, inputType = inputType });   
+                Invoker.Instance.DelegateList.Add(() =>
+                {
+                    OnPlayerInputChanged?.Invoke(this, new OnPlayerInputChangedEventArgs
+                        { playerId = playerId, inputType = inputType });
+                });
             }
+            playerInputType = inputType;
             
             if (frameInputData.Position != null)
             {
@@ -92,8 +105,6 @@ public class Entity : MonoBehaviour
             {
                 moveVector = new Vector2(frameInputData.MoveVector.X, frameInputData.MoveVector.Y);
             }
-            Debug.Log($"player:{playerId}收到同步消息, {frameInputData.InputType}, moveVector:{moveVector}," +
-                      $"playerPosition:{playerPosition}");
         }
     }
 }

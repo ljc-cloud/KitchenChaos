@@ -49,6 +49,8 @@ public class CreateRoomUI : BaseUIPanel
             GameInterface.Interface.UIManager.HideUIPanel(UIPanelType.CreateRoomUI);
             GameInterface.Interface.UIManager.HideUIPanel(UIPanelType.RoomListUI);
             GameInterface.Interface.UIManager.HideUIPanel(UIPanelType.MainMenuUI);
+            
+            GameInterface.Interface.EventSystem.Publish<PlayerEnterRoomEvent>();
         });
     }
 }

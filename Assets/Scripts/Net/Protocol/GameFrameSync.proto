@@ -31,6 +31,7 @@ message ReqFrameInputData
   Vector2D shootDirection = 7;
   Vector2D moveVector = 8;
   int32 index = 9;
+  int32 interactCounter = 10;
 }
 
 message FrameInputData
@@ -44,6 +45,7 @@ message FrameInputData
   Vector2D shootDirection = 7;
   Vector2D moveVector = 8;
   int32 index = 9;
+  int32 interactCounter = 10;
 }
 message MessageHead
 {

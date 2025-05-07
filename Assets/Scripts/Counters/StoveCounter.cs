@@ -33,7 +33,8 @@ public class StoveCounter : BaseCounter, IHasProgress {
     private BurningRecipeSO burningRecipeSO;
 
 
-    private void Start() {
+    protected override void Start() {
+        base.Start();
         state = State.Idle;
     }
 

@@ -54,6 +54,7 @@ public class UIManager : BaseManager
     // private readonly SortedList<int, BaseUIPanel> _uiPanelList = new();
 
     private static readonly UIPanelType[] UnLoginUIPanelArray = { UIPanelType.SignInUI, UIPanelType.SignUpUI };
+    private static readonly UIPanelType[] RoomUIPanelArray = { UIPanelType.RoomListUI, UIPanelType.CreateRoomUI };
 
     public override void OnInit()
     {
@@ -64,20 +65,37 @@ public class UIManager : BaseManager
         InitUIPanel();
 
         GameInterface.Interface.EventSystem.Subscribe<PlayerSignInEvent>(OnPlayerSignIn);
+        GameInterface.Interface.EventSystem.Subscribe<PlayerEnterRoomEvent>(OnPlayerEnterRoom);
     }
 
     private void OnPlayerSignIn(PlayerSignInEvent _)
     {
-        List<BaseUIPanel> uiPanelToRemove = new();
+        List<BaseUIPanel> uiPanelListToRemove = new();
         foreach (var uiPanel in _uiPanelList)
         {
             if (UnLoginUIPanelArray.Contains(uiPanel.UIType))
             {
-                uiPanelToRemove.Add(uiPanel);
+                uiPanelListToRemove.Add(uiPanel);
             }
         }
 
-        foreach (var uiPanel in uiPanelToRemove)
+        foreach (var uiPanel in uiPanelListToRemove)
+        {
+            _uiPanelList.Remove(uiPanel);
+        }
+    }
+    
+    private void OnPlayerEnterRoom(PlayerEnterRoomEvent _)
+    {
+        List<BaseUIPanel> uiPanelListToRemove = new();
+        foreach (var uiPanel in _uiPanelList)
+        {
+            if (RoomUIPanelArray.Contains(uiPanel.UIType))
+            {
+                uiPanelListToRemove.Add(uiPanel);
+            }
+        }
+        foreach (var uiPanel in uiPanelListToRemove)
         {
             _uiPanelList.Remove(uiPanel);
         }
@@ -86,7 +104,18 @@ public class UIManager : BaseManager
     public override void OnDestroy()
     {
         GameInterface.Interface.EventSystem.Unsubscribe<PlayerSignInEvent>(OnPlayerSignIn);
+        GameInterface.Interface.EventSystem.Unsubscribe<PlayerEnterRoomEvent>(OnPlayerEnterRoom);
         base.OnDestroy();
+    }
+
+    public void PrintUIList()
+    {
+        string uiList = string.Empty;
+        foreach (var uiPanel in _uiPanelList)
+        {
+            uiList += $"{uiPanel.UIType}->";
+        }
+        Debug.Log(uiList);
     }
 
     /// <summary>

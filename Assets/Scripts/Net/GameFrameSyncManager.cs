@@ -88,9 +88,6 @@ public class GameFrameSyncManager : BaseManager
             Entity localEntity = _mEntities.Find(item => item.playerType is Entity.PlayerType.Local);
             if (localEntity != null)
             {
-                // _mLocalCurrentPosition = localEntity.LocalPlayerPosition;
-                // reqFrameInputData.InputType = Enum
-                //     .Parse<GameFrameSync.InputType>(_mLocalPlayerInputEvent.playerInputType.ToString());
                 position.X = MathUtil.GetFloat(localEntity.localPlayerPosition.x);
                 position.Y = MathUtil.GetFloat(localEntity.localPlayerPosition.z);
 
@@ -99,6 +96,7 @@ public class GameFrameSyncManager : BaseManager
                 
                 reqFrameInputData.Position = position;
                 reqFrameInputData.MoveVector = moveVector;
+                reqFrameInputData.InteractCounter = localEntity.localInteractCounterId;
             }
             
             if (GameInterface.Interface.RoomManager.JoinedRoom)
