@@ -21,11 +21,11 @@ public class DeliveryManagerUI : MonoBehaviour {
     }
 
     private void DeliveryManager_OnRecipeCompleted(object sender, DeliveryManager.RecipeCompletedEventArgs _) {
-        UpdateVisual();
+        Invoker.Instance.DelegateList.Add(UpdateVisual);
     }
 
     private void DeliveryManager_OnRecipeSpawned(object sender, System.EventArgs e) {
-        UpdateVisual();
+        Invoker.Instance.DelegateList.Add(UpdateVisual);
     }
 
     private void UpdateVisual() {

@@ -60,7 +60,7 @@ public class GameInput : MonoBehaviour {
         playerInputActions.Player.Interact.performed += Interact_performed;
         playerInputActions.Player.Interact.canceled += Interact_canceled;
         playerInputActions.Player.InteractAlternate.performed += InteractAlternate_performed;
-        playerInputActions.Player.InteractAlternate.canceled -= InteractAlternate_canceled;
+        playerInputActions.Player.InteractAlternate.canceled += InteractAlternate_canceled;
         playerInputActions.Player.Pause.performed += Pause_performed;
     }
     
@@ -83,6 +83,7 @@ public class GameInput : MonoBehaviour {
         playerInputActions.Player.Interact.performed -= Interact_performed;
         playerInputActions.Player.Interact.canceled -= Interact_canceled;
         playerInputActions.Player.InteractAlternate.performed -= InteractAlternate_performed;
+        playerInputActions.Player.InteractAlternate.canceled -= InteractAlternate_canceled;
         playerInputActions.Player.Pause.performed -= Pause_performed;
 
         playerInputActions.Dispose();

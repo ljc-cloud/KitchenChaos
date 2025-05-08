@@ -76,7 +76,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent {
         int counterId = _mEntity.interactCounterId;
         var counter = CounterManager.Instance.GetCounterFromId(counterId);
         counter?.InteractAlternate(this);
-        _mEntity.interactCounterId = -1;
+        // _mEntity.interactCounterId = -1;
 
         // if (selectedCounter != null) {
         //     // Debug.Log($"{selectedCounter.name}:InteractAlt!!!");

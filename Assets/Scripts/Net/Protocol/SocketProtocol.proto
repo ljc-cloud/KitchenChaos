@@ -39,6 +39,7 @@ enum ActionCode
 	ChangeOperation = 16;
 	SetGameOver = 17;
 	UpdateRecipe = 18;
+	DeliverRecipe = 19;
 }
 
 enum RoomVisibility

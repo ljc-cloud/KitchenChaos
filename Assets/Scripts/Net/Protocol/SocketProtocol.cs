@@ -90,7 +90,7 @@ namespace SocketProtocol {
             "c3RDb2RlEg8KC1JlcXVlc3ROb25lEAASCAoEVXNlchABEg0KCUhlYXJ0QmVh",
             "dBACEggKBFJvb20QAxIICgRHYW1lEAQqWwoMUmVzcG9uc2VDb2RlEhAKDFJl",
             "c3BvbnNlTm9uZRAAEhAKDFVzZXJSZXNwb25zZRABEhUKEUhlYXJ0QmVhdFJl",
-            "c3BvbnNlEAISEAoMUm9vbVJlc3BvbnNlEAMq2gIKCkFjdGlvbkNvZGUSDgoK",
+            "c3BvbnNlEAISEAoMUm9vbVJlc3BvbnNlEAMq7QIKCkFjdGlvbkNvZGUSDgoK",
             "QWN0aW9uTm9uZRAAEgoKBlNpZ25JbhABEgoKBlNpZ25VcBACEg4KCkNyZWF0",
             "ZVJvb20QAxIOCgpTZWFyY2hSb29tEAQSEAoMQXNzaWduQ2xpZW50EAUSDAoI",
             "Sm9pblJvb20QBhIPCgtQbGF5ZXJSZWFkeRAHEgwKCFF1aXRSb29tEAgSDQoJ",
@@ -98,12 +98,12 @@ namespace SocketProtocol {
             "dEdhbWUQCxIUChBVcGRhdGVQbGF5ZXJDb2luEAwSGQoVTG9hZEdhbWVTY2Vu",
             "ZUNvbXBsZXRlEA0SEwoPQ2hhbmdlR2FtZVN0YXRlEA4SDwoLQ2hhbmdlUm91",
             "bmQQDxITCg9DaGFuZ2VPcGVyYXRpb24QEBIPCgtTZXRHYW1lT3ZlchAREhAK",
-            "DFVwZGF0ZVJlY2lwZRASKjMKDlJvb21WaXNpYmlsaXR5EggKBE5vbmUQABIK",
-            "CgZQdWJsaWMQARILCgdQcml2YXRlEAIqMwoKUmV0dXJuQ29kZRIOCgpSZXR1",
-            "cm5Ob25lEAASCwoHU3VjY2VzcxABEggKBEZhaWwQAipiCglHYW1lU3RhdGUS",
-            "DgoKTm90U3RhcnRlZBAAEhAKDFdhaXRpbmdTdGFydBABEhQKEENvdW50ZG93",
-            "blRvU3RhcnQQAhIPCgtHYW1lUGxheWluZxADEgwKCEdhbWVPdmVyEARiBnBy",
-            "b3RvMw=="));
+            "DFVwZGF0ZVJlY2lwZRASEhEKDURlbGl2ZXJSZWNpcGUQEyozCg5Sb29tVmlz",
+            "aWJpbGl0eRIICgROb25lEAASCgoGUHVibGljEAESCwoHUHJpdmF0ZRACKjMK",
+            "ClJldHVybkNvZGUSDgoKUmV0dXJuTm9uZRAAEgsKB1N1Y2Nlc3MQARIICgRG",
+            "YWlsEAIqYgoJR2FtZVN0YXRlEg4KCk5vdFN0YXJ0ZWQQABIQCgxXYWl0aW5n",
+            "U3RhcnQQARIUChBDb3VudGRvd25Ub1N0YXJ0EAISDwoLR2FtZVBsYXlpbmcQ",
+            "AxIMCghHYW1lT3ZlchAEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SocketProtocol.RequestCode), typeof(global::SocketProtocol.ResponseCode), typeof(global::SocketProtocol.ActionCode), typeof(global::SocketProtocol.RoomVisibility), typeof(global::SocketProtocol.ReturnCode), typeof(global::SocketProtocol.GameState), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -169,6 +169,7 @@ namespace SocketProtocol {
     [pbr::OriginalName("ChangeOperation")] ChangeOperation = 16,
     [pbr::OriginalName("SetGameOver")] SetGameOver = 17,
     [pbr::OriginalName("UpdateRecipe")] UpdateRecipe = 18,
+    [pbr::OriginalName("DeliverRecipe")] DeliverRecipe = 19,
   }
 
   public enum RoomVisibility {

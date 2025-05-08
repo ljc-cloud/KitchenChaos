@@ -69,7 +69,7 @@ public class KitchenGameManager : MonoBehaviour {
                 break;
             case State.GamePlaying:
                 gamePlayingTimer -= Time.deltaTime;
-                Debug.Log($"Game playing timer: {gamePlayingTimer}");
+                // Debug.Log($"Game playing timer: {gamePlayingTimer}");
                 if (gamePlayingTimer < 0f)
                 {
                     Debug.Log("GameOver");

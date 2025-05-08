@@ -9,7 +9,7 @@ namespace Net.Request
         public DeliverRecipeRequest()
         {
             Request = RequestCode.Game;
-            Action = ActionCode.UpdateRecipe;
+            Action = ActionCode.DeliverRecipe;
         }
         
         public void SendDeliverRecipeRequest(int deliverRecipeId, Action onComplete = null)
