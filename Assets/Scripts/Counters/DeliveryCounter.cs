@@ -17,8 +17,8 @@ public class DeliveryCounter : BaseCounter {
         if (player.HasKitchenObject()) {
             if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject)) {
                 // Only accepts Plates
-
-                DeliveryManager.Instance.DeliverRecipe(player.PlayerId, plateKitchenObject);
+                bool isLocal = player.GetComponent<Entity>().IsLocal;
+                DeliveryManager.Instance.DeliverRecipe(player.PlayerId, isLocal, plateKitchenObject);
 
                 player.GetKitchenObject().DestroySelf();
             }

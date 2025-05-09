@@ -72,7 +72,7 @@ public class DeliveryManager : MonoBehaviour {
         }
     }
 
-    public void DeliverRecipe(int playerId, PlateKitchenObject plateKitchenObject)
+    public void DeliverRecipe(int playerId, bool isLocal, PlateKitchenObject plateKitchenObject)
     {
         for (int i = 0; i < waitingRecipeSOList.Count; i++)
         {
@@ -108,7 +108,8 @@ public class DeliveryManager : MonoBehaviour {
                 {
                     // Player delivered the correct recipe!
                     successfulRecipesAmount++;
-                    _mDeliverRecipeRequest.SendDeliverRecipeRequest(waitingRecipeSO.id);
+                    if (isLocal) 
+                        _mDeliverRecipeRequest.SendDeliverRecipeRequest(waitingRecipeSO.id);
                     // waitingRecipeSOList.RemoveAt(i);
 
                     int tip = waitingRecipeSO.tip;
